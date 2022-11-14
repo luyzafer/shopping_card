@@ -1,13 +1,12 @@
 class Cart {
     id = 0
     timestamp
-    products = new Array();
-    
-    constructor(id, timestamp, products) { 
-         this.id = id
-         this.timestamp = timestamp
-         this.products = products
-    }   
+ 
+    constructor(id, timestamp) { 
+        this.id = id
+        this.timestamp = timestamp
+
+   }  
 }
 
 module.exports = Cart

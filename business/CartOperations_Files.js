@@ -1,7 +1,7 @@
 const fs = require('fs');
 const cart = require('../model/Cart.js')
 
-class CartOperations {
+class CartOperations_Files {
 
     constructor() {
     }
@@ -95,4 +95,4 @@ class CartOperations {
     }
 }
 
-module.exports = CartOperations
+module.exports = CartOperations_Files

@@ -1,13 +1,11 @@
 const { Router } = require("express");
 const router = Router();
-//const productOperations = require("../business/ProductOperations.js");
-const productOperations = require("../business/ProductOperations_MariaDB.js");
+const productOperations = require("../business/ProductOperations.js");
 const productsLogic = new productOperations();
 const Utility = require('../utility/Utility.js');
 const Product = require("../model/Product.js");
 const utilityTool = new Utility();
 const verifyRole  =  require("../middlewares/verifyRole.js");
-
 
 
 

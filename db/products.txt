@@ -1,69 +1,11 @@
 [
   {
     "id": 1,
-    "title": "book1",
-    "price": "9",
-    "thumbnail": "www.test1.com"
-  },
-  {
-    "id": 2,
-    "title": "book2",
-    "price": "2.5",
-    "thumbnail": "www.test2.com"
-  },
-  {
-    "id": 3,
-    "title": "book2",
-    "price": "2.5",
-    "thumbnail": "www.test2.com"
-  },
-  {
-    "id": 4,
-    "title": "lu",
-    "price": "9",
-    "thumbnail": "ddd"
-  },
-  {
-    "id": 5,
-    "title": "cc",
-    "price": "cc",
-    "thumbnail": "cc"
-  },
-  {
-    "id": 6,
-    "title": "vv",
-    "price": "6",
-    "thumbnail": "vv"
-  },
-  {
-    "id": 7,
-    "title": "bb",
-    "price": "bb",
-    "thumbnail": "bb"
-  },
-  {
-    "id": 8,
-    "title": "yy",
-    "price": "yy",
-    "thumbnail": "yy"
-  },
-  {
-    "id": 10,
-    "timestamp": 1667258755193,
+    "timestamp": 1668378652509,
     "name": "product1",
     "description": "description for product1",
     "code": "prod1",
     "picture": "img prod 1",
-    "price": 1,
-    "stock": 100
-  },
-  {
-    "id": 11,
-    "timestamp": 1667266124057,
-    "name": "product2",
-    "description": "description for product2",
-    "code": "prod2",
-    "picture": "img prod 2",
     "price": 1,
     "stock": 100
   }
