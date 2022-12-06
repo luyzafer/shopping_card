@@ -2,7 +2,8 @@ const fs = require('fs');
 const {options} = require ('../db_options/mariaDB')
 const knex = require ('knex')(options);
 
-class ProductOperations_MariaDB{
+class ProductOperationsMariaDBContainer{
+
 
     async getAll(){
         console.log("Entering to get all the products in MariaDB")
@@ -47,5 +48,5 @@ class ProductOperations_MariaDB{
     }
 }
 
-module.exports = ProductOperations_MariaDB
+module.exports = ProductOperationsMariaDBContainer
 

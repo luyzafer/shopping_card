@@ -1,6 +1,8 @@
 const fs = require('fs');
+const Product = require('../model/Product.js');
+const utility = require('../utility/Utility.js')
 
-class ProductOperations{
+class ProductOperationsFileSystemContainer{
 
     idProduct = 0;
 
@@ -22,9 +24,13 @@ class ProductOperations{
 
     async save (product){
         console.log("Entering to save the new product")
+        const productsDB = await this.getAll()
+        const id = this.getLastId(productsDB)
+        let newProduct = new Product(id+1, Date.now(), product.name, product.description, product.code, product.picture , product.price, product.stock)
+        console.log(newProduct)
         try{
             return this.getAll().then(productsDB=> {
-                productsDB.push(product)
+                productsDB.push(newProduct)
                 this.writeInDB(productsDB)
                 console.log("Saved in DB")
             })
@@ -34,17 +40,27 @@ class ProductOperations{
         }
     }
 
+    getLastId(productsDB){
+        let lastId = 0
+        productsDB.forEach(element => {
+            if(element.id>lastId){
+                lastId=element.id
+            }
+        });
+        return lastId
+    }
+
     //Corregir el id al editar
     async update (product, id){
-        console.log("Entering to update the  product" + product.id)
+        console.log("Entering to update the  product" + id)
         try{
             const allProducts = await this.getAll()
             let productToEdit = null
-            productToEdit = await this.getById(product.id)
-            console.log(product)
+            productToEdit = await this.getById(id)
+            product.id = parseInt(id)
             console.log(productToEdit)
             if(!productToEdit)
-                throw new Error('no existe el id '+product.id)
+                throw new Error('no existe el id '+id)
             const elementosModificados= allProducts.map(item =>{
                 if( item.id == id ){
                     return product}
@@ -108,5 +124,5 @@ class ProductOperations{
     }
 }
 
-module.exports = ProductOperations
+module.exports = ProductOperationsFileSystemContainer
 

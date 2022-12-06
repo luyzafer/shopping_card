@@ -2,11 +2,12 @@ const express = require("express");
 const { create } = require('express-handlebars');
 const {Server: HttpServer} = require('http');
 const {Server : IOServer} = require('socket.io');
+const { PORT } = require('./config/index.js');
 
 
 const indexRoutes = require('./routers/index');
-const productsRouter  = require('./routers/ProductsAPI');
-const cartRouter  = require('./routers/cartAPI');
+const productsRouter  = require('./routers/Product');
+const cartRouter  = require('./routers/Cart');
 
 const Utility = require('./utility/Utility.js');
 const Product = require("./model/Product.js");
@@ -17,7 +18,7 @@ const utilityTool = new Utility();
 const { all } = require("./routers/index");
 
 
-const PORT= process.env.PORT || 8081
+
 
 
 app = express()
